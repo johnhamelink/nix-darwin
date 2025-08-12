@@ -166,12 +166,6 @@ in
       '';
     })
     (mkIf cfg.enable {
-      assertions = [
-        {
-          assertion = config.nix.enable;
-          message = ''`nix.linux-builder.enable` requires `nix.enable`'';
-        }
-      ];
 
       system.activationScripts.preActivation.text = ''
         # Migrate if using the old working directory
